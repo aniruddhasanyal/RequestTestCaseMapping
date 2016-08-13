@@ -1,0 +1,468 @@
+Test Case Title,Step,Description,Notes,Expected Result,Expected File,P/F,Tester Name,Test date,Defect id,Remarks
+"Creating a new Purchase Order Header
+",Step,"Ordering > Orders > Create a Purchase Order Header
+
+Create Purchase Orders for all of the following Item Types:
+a) Regular Item
+b) Simple Pack
+c) Complex Pack
+d) Deposit contents
+e) Consignment/concession
+f) Transformed orderable
+
+    - Create a Purchase Order Header (Purchase Order Maintenance)  
+    Obj.:  To create the Header for a single-drop Purchase Order for a single department
+ using an Item List, to be delivered direct to multiple stores
+
+1 - From the main menu, select ?Ordering?, then select the ?Orders? form
+2 - In the Action drop-down menu, select ?New Order? and press <OK>
+3 - In the PO Header Maintenance screen, select/enter the following:
+            ?Order type?:  Create PO's for all the Types:N/B,ARB,BRB.
+             ?Import Country?: 
+             ?Supplier?: 
+             ""Payment Method""
+             ?PO Type?:  
+             ?Department?:  
+             ?Location Type? : Test for both Store and Warehouse
+             ?Location Id.?: 
+              ""Promotion""    
+             ?Order Currency?:The Default Currency is USD.
+              Validate when the Currency is changed from USD to any other, the Order Exchange Rate field changes accordingly.
+             ""Order Exchange Rate""
+             ?Pick-up Date?: 
+             ?Not Before Date?: 
+             ?Not After Date?:  
+              ?OTB End of Week Date?: 
+4 - Insert the fields or select as following 
+             ""Ord Vendor No""
+         Flags 
+             ""Import Order""
+             ""Include On-Order""
+             ""QC Required""
+             ""EDI PO""
+             ""Customer Order""
+             ""Prepack""
+",,"
+
+1 - The ?Order Selection?  form appears
+
+2 - PO Header Maintenance screen appears
+
+3 - Values insert correctly
+
+
+
+",,,,,,
+"Specifying Items for a Purchase Order
+",Step,"Ordering > Orders >  Specify Items for Purchase Order
+
+Add multiple items on PO.
+Obj.: To add items by using an item list to the purchase order header created in Test id.1 - Create a Purchase Order Header
+
+ PreRequisite : Test id. 1 Create a Purchase Order Header
+                 
+1 - On the Purchase Order Maintenance form select Items
+           In the ?Enter As? selection box in the bottom left hand corner of the screen, select the ?Item List? radio button.
+           In the ?Item List? field, enter the desired item list for a department, then press <Apply Item> 
+
+2 - If the items selected are Level 1 items with Level 2 items with Diffs: Distribute the order by the
+ Diffs of the item selected:
+           a) - Select Diffs  from the ?Distribute By? selection box (the Distribution Diff Apply Screen appears)
+           b) - Ensure the ?percentage? radio button is selected in the ?Distribute by? selection box
+           c) - Select a number of diffs from the ?Available Diffs? table and press the ?>? arrow key to move
+ them to the ?Applied Diffs? table.
+           d) - Enter percentage values to the total of %100 in the ?Percentage? text fields 
+next to all of the Applied Diffs selected.
+           Press <OK>
+          
+3 - Repeat Step id. 2 (a,b,c,d) for the number of Diffs applied to the item
+
+
+",,"
+
+1 - Order Distribution Worksheet appears
+
+2 - The table is populated with the details of the SKUs selected
+
+3 - The ?Wksht Qty? value is distributed between the Diffs selected, with the quantities distributed totaling the original value entered
+
+
+",,,,,,
+Perform Location Distribution on the purchase Order,Step,"Ordering > Orders >  Location Distribution of Purchase Order Items
+ Obj.: To perform location distribution to stores of the items on the purchase order created in Test id. 1 Create a Purchase Order Header and Test id. 2 Specify Items for Purchase Order
+ PreRequisite :  Test id.2 Specify Items for Purchase Order    
+          
+1 -From the Purchase Order Maintenance Screen already open, select the ?Items? button and in the 
+options menu  in the ?Distribute? button
+2 - Select the ?Ratio? button in the ?Distribute By? selection box
+     Select ?Store? under the ?Location Type? column
+     Press the LOV button next to the ?Location? column
+     Select a store from the pop up list (the ?Location? and ?Name? columns are 
+automatically populated)
+     Enter a value in the Ratio column
+            Press <Add>
+     n: Repeat the above step 2, selecting a different store each time, and press <OK> 
+instead of <Add>
+3 - Press <OK>
+4 - Press <Recalc Totals> button to populate the ?Total Order Cost?, ?Landed Cost? and ?Outstanding Cost? fields
+    (If you receive a prompt that the ?OTBs? have been exceeded, then simply press <OK>)
+5 - In the ?Options? drop down menu on the toolbar (in the top left-hand corner 
+of the screen), select Submit
+6 - Make a note of the ?Inventory by Location? details, Stock on Hand, 
+Stock on Order etc of an item on the PO created
+View and make a note of the?Qty Ordered?, ?Qty Rec?d? and ?Qty Oustanding?
+ details on ?Order Details? screen (View Item > Order Detail) for an item on the Purchase 
+Order created in Test id.1, 2 above
+7 - Make a note of the Order Number, then Press <OK>",,"
+1 - The ?Location Distribution? screen appears
+
+2 - The screen defaults back to the ?Order Distribution Worksheet?. The distribution of the quantity being ordered is divided amongst the SKUs according to the Location Distribution percentage just specified (i.e. 50% per location)
+
+3 - The screen defaults back to the  PO Header Maintenance Screen
+
+4 - ?Total Order Cost?, ?Landed Cost? and ?Outstanding Cost? fields are populated
+
+5  - The status of the Worksheet changes to ?submitted?
+
+6 - Details are noted
+
+7 - The screen defaults back to the Main Menu
+
+
+",,,,,,
+Approving a purchase order,Step,"
+Ordering > Orders >  Location Distribution of Purchase Order Items
+
+         Obj.: To approve the Purchase Order created in Test id. 1, 2 and 3
+
+ PreRequisite :  Test id.3 Location Distribution of Purchase Order Items   
+          
+1 -From the main menu, select ?Ordering?, then select the ?Orders? form
+
+2 - In the Action drop-down menu, select ?Edit Order? and press <OK>
+
+3 - Enter the Order Number in the ?Order? field.
+Press <OK>.
+
+4 - In the ?Options? drop down menu on the toolbar (in the top left-hand corner of the screen), select Approve (if a prompt appears that the OTB has been exceeded, select <OK>)
+
+5 - Validate the values that are calculated automatically:
+             Discount % off
+             Markup % Retail 
+             Total order Retail             
+             Total ordered cost
+
+6 - Validate the stock of the items
+
+
+
+
+
+",,"
+1 - The ?Order Selection? form appears
+2 - PO Header Maintenance screen appears
+3 - The PO Header Maintenance screen appears
+4 - The status of the Worksheet changes to ?Approved?.
+5 - The values should be correctly calculated. The values should have:
+          Discount % off ? sum of the deals discounts applied to the order 
+          The Markup % Retail can be calculated with two different formulas depends if is being calculated based on the cost or based on the retail. This parameter is defined at department level
+          Markup % Retail =((I_total_retail - I_total_cost) / I_total_cost);
+        or 
+         Markup % Retail = ((I_total_retail - I_total_cost) / I_total_retail);
+         Total order Retail = unit retail of the item in the order * qty )
+         Total ordered cost: (cost o the item in the order * quantity ordered)
+         Note: These values are displayed in the coin of the PO
+6 - The item Stock_on_order should had been incremented will the values ordered
+
+
+",,,,,,
+,VP,"For all the Item Types( as per the 1st Test case)(different Item Types have different UOM), the UOM logic on PO screens  are as per the Costing/Standard UOM of the item",,UOM for item is behaving as per the logic.,,,,,,
+Editing a purchase order,Step,"Ordering > Orders >  Edit Purchase Order
+
+         Obj.: To Change the Purchase Order created in  Test id.1, 2 and 3
+
+ PreRequisite :  Purchase Order created   
+          
+1 - From the main menu, select ?Ordering?, then select the ?Orders? form
+ 
+2 - In the Action drop-down menu, select ?Edit Order? and press <OK>
+ 
+3 - Enter the Order Number in the ?Order? field. Select an order in Worksheet status
+Press <OK>
+ 
+4 - Change values of a few fields
+
+Validate that the following fields are enabled and mandatorily edit all the fields:
+Terms, PO Type, Promotion, Pickup date, Not before date, Not after date, Vendor order No., Include On-Order Ind, QC Required Ind.
+ 
+5 - Repeat the test for PO in submit and approve status
+",,"
+1 - The ?Order Selection? form appears
+ 
+2 - PO Header Maintenance screen appears
+ 
+3 - The PO Header Maintenance screen appears
+ 
+4 - Should be possible to change all fields of the PO
+ 
+5 - Should only possible change the PO type, the terms and the Date fields. All other fields should be disabled
+ 
+
+",,,,,,
+,VP,"Order Revision record viz. tables ordhead_rev, ordloc_rev etc are created.",,"ordhead_rev, ordloc_rev etc are created after the PO is edited.",,,,,,
+Validations on PO Header,Step,"RMS>Ordering>Orders>Edit
+Click Search.Open any Order in Worksheet status.Goto Options>Supplier details.
+
+",,,,,,,,
+,VP,"1.Validate that the user is able to View the supplier details and all the fields are non editable.
+2.Validate that the user is able to View the Buyer details.",,"1.Supplier Details are viewed and are not editable.
+2.Buyer details can be viewed with only Buyer field as editable field.",,,,,,
+Maintain Shipping Details on PO,Step,"RMS>Ordering>Orders>Edit
+Click Search.Open any Order in Worksheet status.Goto Options>Shipping Details
+
+Enter the values in the following fields:
+Purchase Type
+Shipping method
+Freight Terms
+Freight payment method
+Transportation responsibility
+Title pass Location
+Pickup Location
+Pickup No.
+
+Click Ok to save changes and exit the window.
+",,The Changes are saved.,,,,,,
+Maintain Dates on PO,Step,"RMS>Ordering>Orders>Edit
+Click Search.Open any Order in Worksheet status.Goto Options>Dates
+",,,,,,,,
+,Step,Enter the values in Earliest Ship date and Latest ship date,,,,,,,,
+,Step,Enter the values in Appointment Date/Time and Estimated in Stock date.Click Ok to save changes and exit.,,The Changes are saved.,,,,,,
+Maintain Attributes,Step,"RMS>Ordering>Orders>Edit
+1.Click Search.Open any Order in worksheet status.Goto Options>Attributes
+2.Enter the values in the following fields:
+Lading Port, Discharge Port, Factory, Agent, Partner,Bill to Location.
+3. click Ok to save the changes and exit.",,The Changes are saved.,,,,,,
+Maintain Require Documents,Step,"RMS>Ordering>Orders>Edit
+1.Click Search.Open any Order.Goto Options
+2.Add relevant Document Id to the Order. Click Add to add more documents.
+3. Click Ok to save the changes.
+
+",,The Changes are saved.,,,,,,
+Viewing Shipments against Purchase Order,Step,"RMS>Ordering>Orders>Edit
+Click Search.Open any Order.Goto Options>Shipments
+",,,,,,,,
+,VP,"The user is able to view any shipments made against the PO
+",,Valid shipment are viewed against the PO.,,,,,,
+Viewing Order Revisions,Step,"RMS>Ordering>Orders>Edit
+Click Search.Open any Order.Goto Options>Order Revisions
+",,,,,,,,
+,VP,The user is able to view any Order Revisions made to the PO.,,Order revisions are viewed properly.,,,,,,
+Maintain Timeline,Step,"RMS>Ordering>Orders>Edit
+Click Search.Open any Order.Goto Options>Timelines>New
+
+1.Click on Timeline Number LOV to provide a valid Id.
+
+",,,,,,,,
+,VP,"Validate that the screen gets populated automatically showing valid Original, Revised and Actual dates of the PO.",,The screen is populated automatically with valid information.,,,,,,
+,Step,2.Click Ok to save any changes and close the screen.,,,,,,,,
+Viewing PO Deal/Order Summary,Step,"RMS>Ordering>Orders>Edit
+Click Search.Open any Order.Goto Options>Deal/Order Summary
+The user should be able to View the details of any Deal attached to it.",,The details are viewed successfully.,,,,,,
+Managing Inventory Mgt Info/Totals.,Step,"RMS>Ordering>Orders>Edit
+Click Search.Open any Order in Worksheet Status.Goto Options>Inventory Mgt Info/Totals
+Provide necessary info on the following screens.
+Scaling Constaints,Minimum Constraints,Supplier Pooling,Order Quantities,Truck Splitting Constraints.
+",,The details filled in successfully and the changes are saved.,,,,,,
+Viewing Inventory mgt Info/Totals,Step,"RMS>Ordering>Orders>Edit
+Click Search.Open any Order.Goto Options>Inventory Management Info/Totals.
+The user should be able to View the details of any Inventory Mgt Info attached to it.",,The details are viewed successfully.,,,,,,
+Splitting an order,Step,"RMS>Ordering>Orders>Edit
+1.Click Search.Order Search window opens.Select any Order in Worksheet Status.
+2.Click Split Order. An error message may appear as ' Truck Splitting Constraints are not set up for the order. It cannot be split.' Click Ok.
+3.Open the order. Goto Options and click Inventory Mgt Info/Totals.Order Inventory Maintenance window opens.
+4.Define Truck Splitting Constraints for the order.
+5.Click Ok to save the changes and exit the window.Note:Dont approve the PO.
+6.Search and retrive the same PO in Edit mode.
+7.Click Split Order tab.
+",,,,,,,,
+,VP,The Order would be split by No. of Truckloads and the original PO cannot be retrieved back.,,No. of new PO's created is equal to the No. of Truckloads,,,,,,
+Order Summary,Step,"RMS>Ordering>Orders>Edit
+1.Click Search.Open any Order.
+2.Click Summary tab. Validate that the user is able to view the PO Summary.
+3.Click on View Location to see the locations attached to it.
+4.Click on view Items to see the attached items to the PO.
+4. Click Ok to exit the window.",,The details on Location and Items are viewed successfully.,,,,,,
+Modification of PO,Step,"1.Create a PO as per the test case, 'Creating a new Purchase Order Header'.
+2.Add multiple items to the PO.Approve the PO
+3.Modifiy the PO by changing the ordered qty of some of the items.
+Validate the PO cost before and after the change is made.
+4.Modify the PO by deleting one or few of the items ordered.
+Validate the PO cost before and after the PO is modified",,3 & 4.PO cost is validated successfully before and after the modification to PO is made,,,,,,
+Viewing a Purchase Order,Step,"Ordering > Orders > View Purchase Order
+
+         Obj.: To View the Purchase Order created in Test id.1, 2 and 3
+
+ PreRequisite :  Purchase Order created   
+          
+1 - From the main menu, select ?Ordering?, then select the ?Orders? form
+
+2 - In the Action drop-down menu, select ?View Order? and press <OK> 
+
+3 - Enter the Order Number in the ?Order? field
+Press <OK>
+or 
+Fill some fields and press the Search button to find a PO. Select the PO and press <OK>
+
+4 - Change values of a few fields
+
+5 - Validate the data
+",,"
+1 - The ?Order Selection? form appears
+ 
+2 - PO Header Maintenance screen appears
+ 
+3 - The PO Header Maintenance screen appears
+ 
+4 - Should not be possible to change any fields of the PO
+ 
+5 - The data should be the same that was inserted
+ 
+
+",,,,,,
+Printing a purchase order,Step,"Ordering > Orders >  Print a Purchase Order 
+
+         Obj.: Validate the PO report
+
+ PreRequisite :  Have some PO created   
+         
+1 - From the main menu, select Ordering > Orders 
+2 - Search for and retrieve a purchase order in Edit mode
+3 - Click Print 
+4 - In the Destination field, select where you want the finished report to be sent.
+              Note: Select Cache to view the report online
+5 - Click Submit Query",,"
+
+1 - The Order
+Selection window is displayed
+ 
+2 - The PO Header
+Maintenance window is displayed
+ 
+3 - The Report Parameters Web page is displayed
+ 
+5 - The report is and sent to the selected destination
+ 
+
+",,,,,,
+Canceling an item in an approved order,Step,"Ordering > Orders >  Cancel an item in an Approve order
+
+         Obj.: Change the values of an ordered item, when the order was already approved
+
+ PreRequisite :  Test id. 4 Approve Purchase Order
+  
+1 - From the main menu, select ?Ordering?, then select the ?Orders? form
+2 - In the Action drop-down menu, select ?Edit Order? and press <OK>
+3 - Enter the Order Number in the ?Order? field ? the order must be approved
+Press <OK>
+4 - Press the 'Items' button
+5 - Press the ?Locations? button
+6 - Select the Item that you want to cancel and press the ?cancel item? button
+7 - Select 'Yes' in the warning message box
+8 - By default this field should be filled with the total quantity order 
+9 - Insert a value higher than the order qty 
+10 - Insert a value lower than the order qty",,"
+
+1 - The ?Order Selection? form appears
+ 
+2 - PO Header Maintenance screen appears
+ 
+3 - The PO Header Maintenance screen appears
+ 
+4 - The ?PO Item maintenance? opens
+
+5 - The PO/Location window opens
+ 
+6 - A message should be displayed to confirm that you want to cancel the item
+ 
+7 - The table is rebuilt and a new field is displayed: Cancelled QTY UOP
+ 
+8 - The field should be filled with the value of the qty order and should be enabled
+ 
+9 - Should receive an alert message saying that it is not possible to cancel more than what was ordered
+ 
+10 - The order qty should be recalculated.
+     Example:
+           If you had order 10 and you cancel 4, the order qty should now be 6
+ 
+
+ 
+
+",,,,,,
+Making changes to an order in approved state,Step,"Ordering > Orders >  Amend/Change an Order in Approve status 
+
+         Obj.: Change the values of an Order already approved
+
+ PreRequisite :  Test id. 4 Approve Purchase Order
+          
+1 -  From the main menu, select ?Ordering?, then select the ?Orders? form
+2 - In the Action drop-down menu, select ?Edit Order? and press <OK>
+3 - Enter the Order Number in the ?Order? field ? the order must be approved Press <OK>
+4 - On the Options menu select the option ?worksheet?. Select Yes in the alert message
+5 - Change several values of the fields and approve the order",,"
+1 - The ?Order Selection? form appears
+ 
+2 - PO Header Maintenance screen appears
+ 
+3 - The PO Header Maintenance screen appears
+ 
+4 - The PO should be in worksheet status
+ 
+5 - The PO should be approved and the should have the new values
+
+",,,,,,
+Creating a new PO based on an already existing PO,Step,"Ordering > Orders >  Create a PO based on other that already exist in the system
+
+         Obj.: Change the values of an Order already approved
+
+ PreRequisite :  Have some PO created
+          
+1 -  From the main menu, select ?Ordering?, then select the ?Orders? form
+ 2 - In the Action drop-down menu, select ?Create an Order from existing?, insert the PO number of the PO that you want to copy and press <OK>
+ 3 - Validate the data of the new PO: Header, items, locations
+ 4 - Verify that only the PO number and the date fields should be different of the PO that was copied. And the deals should not be applied
+ 5 - To approve the PO follow the Test id 4",,"
+1 - The ?Order Selection? form appears
+ 
+2 - The PO Header Maintenance screen opens with the fields filled
+ 
+3 - The fields should be filled with the same values of the PO that was copied
+ 
+4 - The PO number should be generated sequentially and the dates fields should be recalculated based on supplier lead times. The field ?discount off? should not be filled
+ 
+5 - The Order should be correctly approved
+ 
+
+",,,,,,
+Viewing a Purchase Order,Step,"1- Open the item(which is to be ordered) in view mode. Click on locations. The item location screen opens up. 
+2 - Select the row corresponding to the location against which the PO will be placed and click on Inventory by location . The item location inventory screen opens up. Make a note of the on order qty.
+3- Create and approve an order for that location and item.
+4 - Open the item ordered in view mode. Click on locations. The item location screen opens up. 
+5 - Select the row corresponding to the location against which the PO has been placed and click on Inventory by location . The item location inventory screen opens up. 
+Note : cancel an approved order and again verify that the on order qty reflects the qty of items cancelled.",,1 - The Order quantity should be reflected in the field on order for the item location combination,,,,,,
+Validations on System Paramaters,Step,RMS>Control>System>System Variables,,,,,,,,
+,VP,"1.On Orders Screen validate that Expiry Date for Preissued Orders is set to 30 days.
+2.On Orders Screen validate that Retention of Completed Orders is set to 24 months.",,"1.Expiry Date for Preissued Orders = 30 days
+2.Retention of Completed Orders = 24 months",,,,,,
+,VP,On EDI Transactions screen validate that Retention for EDI Revisions is set to 30 days.,,Retention for EDI Revisions = 30 days,,,,,,
+PO AutoClose,Step,"RMS>Ordering>Orders>New
+Create a PO. Approve it.",,,,,,,,
+,Step,"RMS>Control>System>System Variables
+Goto Orders screen & Note the no. of days on the field 'Approve PO Close Delay'.",,,,,,,,
+,VP,"If no shipment is received for the PO, it should be closed after the no. of days on 'Approve PO Close Delay' after the not after date of PO is passed.( PO getting closed after Not After Date of PO plus Approve PO Close Delay)",,"1.Check the status of PO before not after date.
+2.Check the status of PO after no. of days on 'Approve PO Close Delay'.",,,,,,
+Undelivered PO Close,Step,"RMS>Control>Supplier>Edit
+Search for any supplier.Check the DSD indicator
+",,,,,,,,
+,Step,"RMS>Ordering>Order>New
+Create a PO with the above supplier and take 'Location Type' as 'Store'",,,,,,,,
+,VP,The user should be able to create a PO while receiving the Order at the Store selected.,,PO created successfully.,,,,,,

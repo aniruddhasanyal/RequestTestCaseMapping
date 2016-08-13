@@ -1,0 +1,184 @@
+Test Case Title,Step,Description,Notes,Expected Result,P/F,Tester name,Testing date ,Defect id,Remarks
+Create Supplier > EDI,Step,"EDI
+1 - From the options menu, select EDI. The supplier EDI Information window is displayed.
+2 - Select 'EDI Transaction Supported by the Supplier' option flag for :
+        - PO
+        - PO Change
+        - Confirming PO
+        - Contract
+        - ASN
+        - Availability
+        - Sales
+3 - Insert values for  'EDI Cost Change Approval Variance' to :
+       - Amount
+       - Percent
+4 - Then click ok to create.
+
+",,All values selected/entered successfully,,,,,
+Set Returns for  Supplier ,Step,"Supplier Returns
+1 - From the options menu, select 'Supplier Returns'. The 'Supplier Returns'  Information window is displayed.
+2 - The field Returns Allowed checked
+3 - The field Authorization Required checked
+4 - The field Minimum Return, insert a numeric value 
+5 - The field Courier, insert the data.
+6 - The field Handing , insert a numeric value in perct.
+ Create Address for Returns
+7 - Select 'Address' option.
+8 - Select Address type option from the list value (Business, Order, Postal, Returns)
+9 - Select 'Address Primary'  Required checked.
+10 - Insert Address and Contacts fields for returns
+Click 'Ok' ",,The values and flags are correctly created for supplier,,,,,
+Create Suppliers Attributes for  Supplier ,Step,"Supplier Attributes 
+1 - From the options menu, select Attributes. The supplier attributes Information window is displayed.
+2 - The field 'Attributes' check and Uncheck the fields :
+        . Pre-Ticketed Item
+        . Copp Agreement
+        . No PO Required
+        . Volume Rebate 
+        . Terms 
+ Create both situations
+3 - Then click OK.",,The values and flags are correctly created for supplier,,,,,
+Create Suppliers Traits for Supplier ,Step,"Supplier Traits :
+1 - From the options menu, select 'supplier Traits'. The  Information window is displayed.
+2 - Select 'Supplier Trait' from list value
+3 - Then click ok.",,The Trait value select are correctly associated to the supplier.,,,,,
+Delete Supplier Trait,Step,"1 - From the options menu, select 'supplier Traits'. The  Information window is displayed.
+2 - Select a supplier trait
+3 - click on delete",,,,,,,
+Add Supplier Address ,Step,"Enter several lines of comments 
+Click OK
+2 - Select Options -> Address
+3 - Select Address type 04
+Click Yes to pop-up
+Complete the address: Complete a typical foreign address, post code, country (leave State blank)
+Complete the contact name and phone details
+Click New (and Yes to save)
+4 - Select Address Type 01 (Business)
+Complete another address
+Click OK 
+5 - Complete an address for returns
+Click New
+6 - Complete an address for invoices
+Click OK
+",,"The pop-up 
+2 - The Address form opens
+3 - The form save the details
+4 - A pop-up requests an address for returns
+5 - The form saves
+6 - The form saves
+
+",,,,,
+ Edit Delivery Schedules for Supplier ,Step,"1 - Select Options -> Delivery Schedules
+2 - Select Group Type: Warehouse
+        .Value: Select the Tallaght warehouse
+        .Frequency
+        . Start date 
+        . Start time
+        . End time
+        . Select 2 days of the week (checkboxes)
+        .Click Apply
+",,"1 - The Delivery Schedule form opens
+2 - Records for each location and scheduled delivery are added to the table",,,,,
+View Supplier,Step,"1. From the main menu, select Control > Supplier 
+2. In the Action field, select View and give required search parameters & Click 'Search'
+",,,,,,,
+,VP,All the fields are disabled and can only be viewed and cannot edited,,Fields are not editable,,,,,
+Maintain Supplier Attributes,Step,"1. Log on to RMS with valid user name and password
+2. From the main menu, select Control > Supplier and Click Open
+3. In Action Field, Select  ""Edit"" and give required search parameters and Click "" Search""
+4. Click one of the records in the  Supplier Search window and click OK
+5. From Options menu, Select  Supplier Attributes 
+6. Click  OK",,"1. Logon should be successful.
+2. Supplier Search window should be opened
+3. All the supplier records for the given search parameters should be  shown  in Supplier Search window 
+4. Supplier Maintenance window should be opened.
+5. Supplier Attributes window should be opened.
+6. The changes should be saved successfully.",,,,,
+,VP , Validate whether Factory Attribute is available,,Factory Attribute should be available.,,,,,
+,VP ,Validate Whether the user is able to select the Factory attribute,,Factory Attribute should be selectable.,,,,,
+Maintain Supplier Invoice Matching Attributes,Step,"1. Log on to RMS with valid user name and password
+2. From the main menu, select Control > Supplier and Click Open
+3. In Action Field, Select  ""Edit"" and give required search parameters and Click "" Search""
+4. Click one of the records in the  Supplier Search window and click OK
+5. From Options menu, Select  Invoice Matching  Attributes 
+6. Click  OK",,"1. Logon should be successful.
+2. Supplier Search window should be opened
+3. All the supplier records for the given search parameters should be  shown  in Supplier Search window 
+4. Supplier Maintenance window should be opened.
+5. Invoice Matching Supplier Variables window should be opened
+6. The changes should be saved successfully.",,,,,
+,VP ," Validate whether the user is able to select the values for Send Debit Memos, Auto-Approve Invoices, Auto-Approve Debit Memos, Allow Supplier to Charge Freight, Invoices for Supplier Pre-Paid, Services Performed Confirmed Required, Receive  Invoice , Pay Invoice  and  Invoice At fields.",,"user should  able to select the values for Send Debit Memos, Auto-Approve Invoices, Auto-Approve Debit Memos, Allow Supplier to Charge Freight, Invoices for Supplier Pre-Paid, Services Performed Confirmed Required, Receive  Invoice , Pay Invoice  and  Invoice At fields.",,,,,
+Maintain Supplier Payment Terms,Step,"1. Log on  to the UNIX server with valid user id and password 
+2. Validate whether the script that will populate the payment terms, runs successfully. ",,"1. Logon is successful
+2. The script should populate the payment terms successfully.",,,,,
+Maintain Supplier Hierarchy Traits,Step,Navigate to Supplier hierarchy traits section ,,Supplier hierarchy traits window should be opened,,,,,
+,VP,"Validate whether Supplier hierarchy trait is  used for
+ Supplier who deals with both taxable items and non-taxable item
+",," Supplier hierarchy trait should be   used for
+ Supplier who deals with both taxable items and non-taxable item",,,,,
+,VP,"Validate whether Supplier hierarchy trait is  used for supplier who deliveries to different sections of ST
+",," Supplier hierarchy trait should be  used for supplier who deliveries to different sections of ST
+",,,,,
+,VP," Validate whether Supplier hierarchy trait  is used for the supplier who possess branches throughout the country
+",," Supplier hierarchy trait  should be  used for the supplier who possess branches throughout the country
+",,,,,
+,VP,Validate whether Supplier hierarchy trait is used for the  supplier who has different payment terms,,Supplier hierarchy trait should  be used for the  supplier who has different payment terms,,,,,
+,VP,"Validate whether supplier hierarchy trait is  used for the  supplier who has different currency types, especially in case of imports",,"Supplier hierarchy trait should be   used for the  supplier who has different currency types, especially in case of imports",,,,,
+Maintain Supplier Import Attributes,Step," From the main menu, select Control > Supplier. 
+Search for and retrieve a supplier in Edit mode. 
+1. From the Options menu, select Import Attributes. 
+In Supplier Import Attributes Window,
+2. Enter or select the import attributes that apply to the current supplier.
+3. Click OK to save your changes and close the window.",,"The Supplier Search window should be opened.
+The Supplier Maintenance window
+should be opened. 
+The import attributes for supplier is saved",,,,,
+Add document to Supplier,Step,"From the main menu, select Control > Supplier.
+Search for and retrieve a supplier in the Edit mode. 
+From the Options menu, select Documents. 
+In Required Documents Window
+1. Click Add.
+2. In the Document field, enter the Document ID, or click the LOV button to select the document.
+3. Click OK to save your changes and close the window.",,"The Supplier Search window should be opened.
+The Supplier Maintenance window
+should be opened. 
+The Required Documents window opens.
+The required document attributes are added to the given supplier.",,,,,
+Add a Supplier Trait,Step,"From the main menu, select Control > Traits > Supplier Traits > Edit.
+1. Click Add Trait.
+2. In the Supplier trait field on the next available line, enter a unique ID for the trait.
+3. In the Description field, enter the description for the trait.
+4. Enter or select the optional information in the remaining fields as necessary.
+5. Click OK to save your changes and close the window.",,"Supplier Traits maintenance window opens.
+The changes shouls be saved and new trait should be added.
+",,,,,
+,VP,Validate whether the Supplier trait is available.,,The Supplier Trait should be available.,,,,,
+Maintain Supplier Trait,Step,"From the main menu, select Control > Traits > Supplier Traits > Edit.
+1. Select an added trait.
+2. Edit the Supplier trait field on the selected line with a unique ID for the trait.
+3.Edit the Description field.
+4. Edit the optional information in the remaining fields as necessary.
+5. Click OK to save your changes and close the window.",,"Supplier Traits maintenance window opens.
+The changes shouls be saved.
+",,,,,
+,VP,Validate whether Supplier trait is modified,,The modified supplier trait should be available,,,,,
+Associate Supplier  to  Supplier Trait,Step,"From the main menu, select Control > Traits > Supplier Traits > Edit. 
+Select a supplier trait. Click Suppliers. 
+1. Click Add Supplier.
+2. In the Supplier field, enter the ID of the supplier, or click the LOV button and
+select a supplier.
+3. Click OK to save your changes and close the window.",,"Supplier Traits Maintenance window opens.
+The Suppliers Associated with Trait window opens.
+The changes should be saved and supplier should be added to the supplier trait.",,,,,
+,VP,Validate whether the Supplier is associated to Supplier trait,,Supplier should be associated to Supplier trait,,,,,
+Associate Supplier Trait to Supplier,Step,"From the main menu, select Control > Supplier > Edit. 
+From the Options menu, select Supplier Traits.
+1. Click Add Trait.
+2. In the Supplier Trait field on the next available line, enter the ID of the trait, or click
+the LOV button and select the trait.
+3. Click OK to save your changes and close the window.
+",,"Supplier
+Maintenance window opens.
+The Supplier Traits List window opens.
+The changes should be saved and supplier trait should be added to the supplier.",,,,,
+,VP,Validate whether the Supplier Trait is associated to Supplier,,Supplier Trait should be associated to Supplier,,,,,

@@ -1,0 +1,736 @@
+﻿               RMS Base Functionalities – Requirements Specifications 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Prepared by: For further information, please contact:CHANGE HISTORY
+VersionDateRevised ByDescription(s) of Change0.1 Initial Draft Overview :
+
+This requirement document specifies the base functionalities of the following modules in Oracle Retail 
+Merchandising System [RMS].
+
+
+• Purchase Orders 
+• Suppliers
+• Inventory Adjustments
+• Transfers 
+
+
+1. Purchase Orders
+ 
+1.1. Manually Create a Purchase Order
+You can create a purchase order manually. Many purchase orders are created through an
+auto generation process in RMS. Occasionally, you may need to write purchase order.
+After you create the purchase order header and add the appropriate details, you need to
+add items to a purchase order and distribute the items on the purchase order.
+
+1.2. Create the Purchase Order
+Navigate: From the main menu, select Ordering > Orders. The Order Search window
+opens
+1. In the Action field, select New Order and click OK. The PO Header Maintenance
+window opens.
+2. In the Order Type field, select the order type.
+3. In the Import Country field, enter the code for the import country, or click the LOV
+button and select the import country.
+4. In the Supplier field, enter the ID of the supplier, or click the LOV button and
+select the supplier. The supplier defaults for other fields are filled in automatically.
+5. In the Department field, enter the ID of the Department, or click the LOV button
+and select the department.
+Note: The department may be required depending on how
+the system was set up.
+6. In the Not Before Date and Not After Date fields, enter the dates, or click the calendar
+button and select the dates.
+7. Enter or edit the enabled fields as necessary.
+8. Add items to the purchase order.
+9. Distribute the items on a purchase order by diff, location, or store grade.
+10. Click OK to save your changes and close the window
+
+1.3. Add items to a purchase order
+Items can be added to a purchase order (PO) one-by-one or by item list. You can choose
+to expand a buyer pack to its component items. You can choose to expand a level 1 or
+level 2 item to its component level 2 or level 3 items. You may also choose to apply an
+existing item pack template to a PO or create a temporary item pack template. Level 1 or
+level 2 items can be distributed on a PO by diffs. Quantities can be entered on a PO based
+on the unit of purchase or the standard unit of measure.
+
+Navigate: From the main menu, select Ordering > Orders. The Order Search window is
+displayed.
+Search for and retrieve a purchase order in Edit mode. Restrict the search to purchase
+orders in Worksheet status. The PO Header Maintenance window opens.
+Click Items. The PO Item Maintenance window opens.
+Click Add to Order the Order Distribution Worksheet window opens.
+1. Click Add Item.
+2. In the Enter As area, select the Item, Ref Item, or Item List option.
+3. In the Item field, enter the item number of the item or the ID of the item list, or click
+the LOV button and select the item or item list.
+4. If required, enter the Origin Country code for the country, or click the LOV
+button and select the country.
+5. In the Quantity field, enter the number of units to be distributed of the item or
+among the components of an item list or item parent.
+6. Enter or edit the Unit of Purchase and Supplier Pack Size fields as necessary.
+7. Click the appropriate button to add the item or items to the table:
+8. To add an item or the items on an item list, click Apply Item, Apply Ref Item, or
+Apply Item List.
+9. To add the component items of an item parent or pack, click Expand Item.
+10. To add a pack, click Apply Template. The Prepack window or the New Prepack
+Template window opens so that you may identify or create the template.
+11. Filter and distribute the items as necessary.
+12. Click OK to save your changes and close the window.
+
+1.4. Distribute a purchase order
+You have several options for distributing items when a purchase order is created. Before
+distributing items, you can filter the items in order to display a subset of the items. Any
+distribution instructions that you enter are then applied only to the subset of items. The
+options for distribution may be:
+􀂃 Distribution by diff: Distribute items by any diff value associated with the purchase
+order.
+
+
+1.5. Distribute Items by Individual Diff
+Navigate: From the main menu, select Ordering > Orders. The Order Search window is
+displayed.
+Search for and retrieve an order in Edit mode. Restrict the search to orders in Worksheet
+status. The PO Header Maintenance window opens.
+Click Items. The Order Distribution window opens.
+1. Click any of the Diff buttons to distribute by diff value. The Distribution Diff Apply
+window opens.
+2. To limit the available diffs, in the range field, enter a diff range ID, or click the LOV
+button and select a diff range.
+3. In the Available Diff area:
+4. Select a diff and click the right arrow button. The diff is moved to the applied
+diff area.
+5. Click the move all right arrow button. All diff are moved to the applied diff
+area.
+6. If you selected the following distribution method:
+􀂃 Quantity: enter the number of items you want of each diff.
+Note: You can distribute by quantity only if you did not
+enter a quantity on the Order Distribution Worksheet
+window.
+􀂃 Distribution %: enter the percentage of the items you want of each diff.
+􀂃 Ratio: enter the proportion of items that you want of each diff.
+Note: You can distribute the diffs and enter a quantity,
+distribution or ratio of zero (0).
+7. Click OK to save any changes and close the window.
+
+1.6. Approve a Purchase Order
+Navigate: From the main menu, select Ordering > Orders. The Order Search window
+opens.
+Search for and retrieve a purchase order in Edit mode. Restrict the search to purchase
+orders in Submitted status. The PO Header Maintenance window opens.
+1. From the options menu, select Approve. You are prompted to approve the purchase
+order.
+2. Click Yes.
+3. Click OK to save your changes and close the window
+
+
+1.7. Edit a Purchase Order
+Navigate: From the main menu, select Ordering > Orders. The Order Search window is
+displayed.
+Search for and retrieve a purchase order in Edit mode. The PO Header Maintenance
+window opens.
+1. Edit the enabled fields as necessary.
+2. To change the status of the purchase order, select the appropriate status from the
+Options menu.
+3. Click Recalc Totals to update the monetary amounts.
+4. Click OK to save your changes and close the window
+
+1.8. View a Purchase Order
+Navigate: From the main menu, select Ordering > Orders. The Order Search window is
+displayed.
+Search for and retrieve a purchase order in View mode. The PO Header Maintenance
+window opens.
+All the fields will be in View only mode 
+
+1.9. Recalculate a Purchase Order
+Navigate: From the main menu, select Ordering > Orders. displayed.
+Search for and retrieve a purchase order in Edit mode. The PO Header Maintenance
+window opens.
+Click Items. The PO Item Maintenance window opens.
+Click Apply Process. The Recalculation Options window opens.
+1. Select the check boxes for the options that you want to recalculate.
+2. Click OK to recalculate the selected options and close the window.
+
+
+1.10. Search for a Purchase Order
+Navigate: From the main menu, select Ordering > Orders. The Order Search window
+opens.
+1. In the Action field, select either Edit Order or View Order.
+2. If you are searching for due orders, in the Buyer field, enter the ID of the buyer, or
+click the LOV button and select the buyer.
+3. Enter additional criteria as desired to make the search more restrictive.
+4. Click Search. The Order Selection window displays the purchase orders that match
+the search criteria.
+5. Select a task:
+6. To perform another search, click Refresh.
+7. To display the details of the purchase order, select a record and click OK. The PO
+Header Maintenance window opens.
+8. Click Close to exit
+
+1.11. Print a Purchase Order
+Navigate: From the main menu, select Ordering > Orders. The Order Search window is
+displayed.
+Search for and retrieve a purchase order in Edit mode. The PO Header Maintenance
+window opens.
+Click Print. The Report Parameters Web page opens.
+1. In the Destination field, select where you want the finished report to be sent.
+Note: Select Cache to view the report online.
+2. Click Submit Query. The report is generated and sent to the selected destination.
+
+1.12. Copy a Purchase Order
+Navigate: From the main menu, select Ordering > Orders. The Order Search window is
+displayed.
+Search for and retrieve a purchase order in Create Order from Existing mode. The PO
+Header Maintenance window opens.
+1. Edit the enabled fields as necessary.
+2. To edit the items and locations:
+a. Click Items. The PO Header Maintenance window opens.
+b. Edit as necessary.
+c. Click Locations. The PO Item/Location window opens.
+d. Edit as necessary.
+e. Click OK to exit each window. The PO Header Maintenance window opens.
+3. Click Recalc Totals to update the monetary amounts.
+4. Click Apply Process.
+5. Select the Apply Deals options to include any deals that pertain to the items. You are
+prompted to include the deals.
+6. Click Yes to approve the inclusion of deals.
+7. Click OK to save your changes and close the window.
+
+1.13. Cancel a Purchase Order
+Navigate: From the main menu, select Ordering > Orders. The Order Search window
+opens.
+Search for and retrieve a purchase order in Edit mode. Restrict the search to purchase
+orders in Approved status. The PO Header Maintenance window opens.
+1. From the options menu, select Cancel All Items. You are prompted to cancel all the
+items on the purchase order.
+2. Click Yes. The Order Mass Item Cancel window opens.
+3. In the Cancel Reason field, select the reason for canceling the items on the purchase
+order.
+4. Click OK. The status of the purchase order is changed to Closed.
+5. Click OK to save your changes and close the window.
+
+1.14. PO Header Validations 
+
+• User should be able to navigate to Buyer screen and validate the fields
+
+1.15. Maintenance of Shipping Details and Dates on PO 
+
+• User should be able to edit the shipping details and dates on a PO 
+
+1.16. Maintenance of Attributes and Requirement Documents
+
+• User should be able to maintain the attributes and requirement documents 
+
+1.17. View Shipments against Purchase Orders 
+
+• Users should be able to view the shipments made against the PO
+
+1.18. View Order revisions 
+
+• User should be able to view any Order Revisions made to the PO.
+
+1.19. Viewing PO Deal/Order Summary
+
+• User should be able to view PO Deal/Order Summary 
+
+1.20. Manage/View Inventory Mgt Info/Totals.
+
+• User should be able to manage and view the inventory management Info/Totals 
+
+1.21. Splitting an Order  
+
+• User should be able to split the PO by no. of truckloads and the original PO cannot be retrieved back
+
+1.22. Order Summary 
+
+• User should be able to view the details of location and items in the PO in the order summary screen.
+
+1.23. Canceling an item in an approved order
+
+• User should be able to bring the order back into worksheet status and cancel the item in the PO.
+
+1.24. Edit the Buyer for a Purchase Order
+Navigate: From the main menu, select Ordering > Orders. The Order Search window is
+displayed.
+Search for and retrieve a purchase order in Edit mode. The PO Header Maintenance
+window opens.
+From the options menu, select Buyer. The Order Buyer Information window opens.
+1. To add a buyer, enter the ID of the buyer in the Buyer field, or click the LOV
+button and select the buyer.
+2. To delete the buyer:
+a. Click Remove.
+b. When prompted to delete the record, click Yes.
+3. Click OK to save your changes and close the window.
+
+1.25. Delete a Purchase Order
+Navigate: From the main menu, select Ordering > Orders. The Order Search window is
+displayed.
+Search for and retrieve a purchase order in Edit mode. Restrict the search to purchase
+orders in Worksheet or Submitted status. The PO Header Maintenance window opens.
+1. From the options menu, select Delete. You are prompted to delete the purchase
+order.
+2. Click Yes.
+3. Click OK to save your changes and close the window
+
+1.26. Create a Purchase Order from Existing PO 
+Navigate: From the main menu, select Ordering > Orders. The Order Search window is
+displayed.
+Search for and retrieve a purchase order in Create Order from Existing mode. The PO
+Header Maintenance window opens.
+1. Edit the enabled fields as necessary.
+2. To edit the items and locations:
+a. Click Items. The PO Header Maintenance window opens.
+b. Edit as necessary.
+c. Click Locations. The PO Item/Location window opens.
+d. Edit as necessary.
+e. Click OK to exit each window. The PO Header Maintenance window opens.
+3. Click Recalc Totals to update the monetary amounts.
+4. Click Apply Process.
+5. Select the Apply Deals options to include any deals that pertain to the items. You are
+prompted to include the deals.
+6. Click Yes to approve the inclusion of deals.
+7. Click OK to save your changes and close the window.
+
+1.27. PO Auto Close and Undelivered PO Close
+
+User should be able to close the PO if no shipment is received for the PO, after the no. of days on 'Approve PO Close Delay' after the not after date of PO is passed
+Also, User should be able to create a PO while receiving the  order at the store selected.
+
+
+2. Suppliers 
+
+2.1. Create Supplier Traits for Supplier 
+Navigate: From the main menu, select Control > Traits > Supplier Traits > Edit. The
+Supplier Traits Maintenance window open.
+1. Click Add Trait.
+2. In the Supplier trait field on the next available line, enter a unique ID for the trait.
+3. In the Description field, enter the description for the trait.
+4. Enter or select the optional information in the remaining fields as necessary.
+5. Click OK to save your changes and close the window
+
+2.2. Associate a Supplier Trait with a Supplier
+Navigate: From the main menu, select Control > Supplier > Maintenance> Edit. The
+Supplier Maintenance window opens.
+From the Options menu, select Supplier Traits. The Supplier Traits List window opens.
+Click Add Trait.
+In the Supplier Trait field on the next available line, enter the ID of the trait, or click
+the LOV button and select the trait.
+Click OK to save your changes and close the window.
+
+2.3. Delete a Supplier from a Supplier Trait
+Navigate: From the main menu, select Control > Traits > Supplier Traits > Edit. The
+Supplier Traits Maintenance window opens.
+Select a supplier trait.
+Click Suppliers. The Suppliers Associated with Trait window opens.
+1. Select a supplier.
+2. Click Delete.
+3. When prompted to delete the record, click Yes.
+4. Click OK to save your changes and close the window.
+
+2.4. Create a Supplier – EDI 
+User should be able to create a supplier via the Supplier EDI maintenance window 
+
+2.5. Add an Address for a  Supplier 
+Navigate: From the Partner Maintenance or Supplier Maintenance window, select
+Address from the Options menu. The Address window opens.
+1. In the Address Type field, enter the address type code, or click the LOV button
+and select an address type.
+2. In the address area, enter the necessary address information.
+3. If the address is the primary address for an address type, select the Primary Address
+check box.
+Note: The Primary Address check box is only available if
+you are adding more than one address to an address type.
+4. In the contact area, enter the necessary contact information.
+5. Click Apply. The address is added to the table.
+6. Click OK to close the window and save any changes.
+
+
+2.6. Record Return Requirements for a Supplier
+Navigate: From the main menu, select Control > Supplier. The Supplier Search window
+opens.
+Search for and retrieve a supplier in Edit mode.
+Note: If the Financials module is installed, select Control >
+Supplier > Maintenance from the main menu.
+1. From the Options menu, select Returns. The Supplier Returns window opens.
+2. If the supplier allows goods to be returned, select the Returns Allowed check box.
+3. If the supplier requires returned goods to have an authorization number, select the
+Authorization Required check box.
+4. In the Minimum Return Amount field, enter the minimum value of the returned
+goods that the supplier will accept.
+5. In the Courier field, enter the supplier's preferred shipper for returned goods.
+6. In the Handling % field, enter the percentage added to the value of the returned
+goods as a handling charge.
+7. To enter the address to which returned goods should be shipped:
+a. Click Address. The Address window opens.
+b. Enter the address in the Address, City, State, Postal Code, and Country fields.
+c. In the Contact fields, enter the name, telephone number, fax number, telex, and
+e-mail for the primary contact person at the supplier's location.
+d. Click OK to exit the Address window.
+8. Click OK to save your changes and close the window.
+
+2.7. Edit a Delivery Schedule for a Supplier
+Navigate: From the main menu, select Control > Supplier. The Supplier Search window
+opens.
+Search for and retrieve a supplier in Edit mode. The Supplier Maintenance window
+opens.
+OR
+If the Financials module is installed, from the main menu, select Control > Supplier >
+Maintenance from the main menu.
+From the Options menu, select Delivery Schedule. The Delivery Schedule window opens.
+1. Select the location schedule from the table.
+2. Edit the fields in the apply area as necessary.
+
+2.8. Maintain Supplier Attributes 
+Navigate: From the main menu, select Control > Supplier > Maintenance. The Supplier
+Search window opens.
+Search for and retrieve a supplier in Edit mode. The Supplier Maintenance window
+opens.
+1. From the Options menu, select Attributes. The Supplier Attributes window opens.
+2. Enter or select the attributes that apply to the current supplier.
+3. Click OK to save your changes and close the window.
+
+2.9. Maintain Supplier Import Attributes
+User should be able to add and edit the import attributes for the supplier   
+
+2.10. Maintain Invoice Matching Attributes for a Supplier
+Navigate: From the main menu, select Control > Supplier > Maintenance. The Supplier
+Search window opens.
+Search for and retrieve a supplier in Edit mode. The Supplier Maintenance window
+opens.
+1. From the Options menu, select Invoice Matching Attributes. The Invoice Matching
+Supplier Variables window opens.
+2. Select the invoice matching attributes that apply to the current supplier.
+3. Click OK to save your changes and close the window
+
+
+3. Inventory Adjustments
+
+3.1. Create Inventory Adjustments
+Inventory adjustments can be made online or they can be received from an external
+system, such as a warehouse management system. There are two types of adjustments
+that can be made to inventory:
+■ Stock on hand: The quantity of stock on hand, or salable stock, is increased or
+decreased. Both the quantity and value of the stock on hand are adjusted in the
+stock ledger.
+■ Unavailable inventory: The quantity of stock on hand does not change, but the
+quantity of unavailable stock, or non-salable stock, is increased or decreased. In
+the stock ledger, the adjustment is recorded as a transfer between stock on hand
+and unavailable inventory. No adjustment is made to the stock value.
+3.2. Inventory Adjustments By Item
+From the main menu, select Inventory > Inventory Adjustments > By Item.
+The Inventory Adjustment by Item window opens.
+1. In the Item field, enter the item number of the item, or click the LOV button and
+select the item.
+2. In the Inventory Status field, select the status that you want to apply to the item.
+3. In the Reason field, enter the ID of the reason for the adjustment, or click the LOV
+button and select the reason.
+4. In the Location Type field, select the type of location where the adjustment is
+needed.
+5. In the Location field enter the ID of the location, or click the LOV button and select
+the location.
+6. In the Adjustment Qty field enter the number of units that you want to add or
+subtract. Use a negative number to subtract from the total.
+7. Click OK to save your changes and close the window.
+3.3. Inventory Adjustments By Location
+Navigate: From the main menu, select Inventory > Inventory Adjustments > By
+Store/Warehouse. The Inventory Adjustment by Location window opens.
+1. In the Location Type field, select the type of location where the adjustment must
+be made.
+2. In the Location field, enter the ID of the location, or click the LOV button and
+select the location.
+3. In the Inventory Status field, select the status that you want to apply to the items
+at the selected location.
+4. In the Reason field, enter the ID of the reason for the adjustment, or click the LOV
+button and select the reason.
+5. In the Item field, enter the item number of the item, or click the LOV button and
+select the item.
+6. In the Adjustment Qty field enter the number of units that you want to add or
+subtract. Use a negative number to subtract from the total.
+7. Click OK to save your changes and close the window.
+3.4. Inventory Adjustments for Transformed Items
+Navigate: From the main menu, select Inventory > Inventory Adjustments > Product
+Transformation. The Product Transformation window opens.
+1. In the Location Type field, select the type of location where the adjustment must
+be made.
+2. In the Location field, enter the ID of the location, or click the LOV button and
+select the location.
+3. In the Item field, enter the item number of the item to be transformed, or click the
+LOV button and select the item.
+4. In the Reason field, enter the ID of the reason for the adjustment, or click the LOV
+button and select the reason.
+5. In the Quantity Removed field, enter the number of units subtracted from stock on
+hand.
+6. In the Item field, enter the item number of the item derived from the transformed
+item, or click the LOV button and select the item.
+7. In the Quantity Added field, enter the number of units added to the stock on
+hand.
+8. In the New Cost field, edit the default cost per unit as necessary.
+9. Add any additional items that are derived from the transformed item.
+10. Click OK to save your changes and close the window.
+3.5. View Inventory Adjustment Reasons
+Navigate: From the main menu, select Control > Setup > Inventory Adjustment
+Reason > View. The Inventory Adjustment Reason Code Maintenance window opens.
+■ Click OK to close the window.
+3.6. View Inventory Status Types
+Navigate: From the main menu, select Control > Setup > Inventory Status Types >
+View. The window opens.
+■ Click OK to close the window.
+3.7. Maintain Inventory Adjustment Reasons
+Navigate: From the main menu, select Control > Setup > Inventory Adjustment
+Reason > Edit.
+The Inventory Adjustment Reason Code Maintenance window opens.
+
+3.8. Edit an inventory adjustment reason
+1. In the Description field, edit the description as necessary.
+2. If there are no inventory adjustments associate with the reason, you can select or
+clear the Cost of Goods Sold Check box.
+3. Click OK to save any changes and close the window
+
+3.9. Delete an inventory adjustment reason
+1. Select a reason and click Delete.
+2. When prompted to delete the record, click OK.
+3. Click OK to save your changes and close the window.
+
+4. TRANSFERS
+
+4.1. Create a Transfer
+Navigate: From the main menu, select Inventory > Transfer. The Transfer Search
+window opens.
+1. In the Action field, select New.
+2. In the Type field select the type of transfer that you want to create.
+3. Click OK. The Transfer Maintenance window opens.
+4. In the Delivery Date field, enter the earliest date that the transfer can be delivered
+to the store.
+5. If you are creating an reallocation or return to vendor transfer, in the Transfer
+Entity Type field, select intercompany or intracompany to indicate which type of
+transfer is created.
+6. Enter information in the enabled fields as necessary.
+7. In the From area:
+a. In the From Entity field, enter the ID of the sourcing entity, or click the LOV
+button and select a location.
+b. In the Location Type field, select the type of location the transfer originates
+from.
+c. In the Location field, enter the location ID or click the LOV button and select a
+location.
+d. Select the appropriate freight type and carrier.
+8. In the Finisher area:
+a. In the Location Type field, select the type of finisher the item is going to.
+b. In the Location field, enter the location ID or click the LOV button and select a
+finisher.
+c. Select the appropriate freight type and carrier.
+9. In the To area:
+a. In the To Entity field, enter the ID of destination entity, or click the LOV
+button and select a location.
+b. In the Location Type field, select the type of location the transfer is going to.
+c. In the Location field, enter the location ID or click the LOV button and select a
+location.
+
+Transfer Maintenance
+From the Transfer Maintenance window, you can access details about the items to be
+transferred, the customer for a customer order, and a summary by diff for an item
+parent. In addition, you can receive a shipped transfer.
+Approve a Transfer
+Close a Transfer
+Create a Transfer
+Copy a Transfer
+Delete a Transfer
+Edit a Transfer
+Print a Transfer
+View a Transfer
+
+4.2. Approve a Transfer
+Navigate: From the main menu, select Inventory > Transfer. The Transfer Search
+window opens. Search for and retrieve a transfer in Edit mode. Restrict the search to
+transfers in Input status. The Transfer Maintenance window opens.
+1. From the Options menu, select Approve. The status of the transfer changes to
+Approved.
+2. Click OK to save your changes and close the window.
+4.3. Submit a Transfer for Approval
+Navigate: From the main menu, select Inventory > Transfer. The Transfer Search
+window opens. Search for and retrieve a transfer in Edit mode. Restrict the search to
+transfers in Input status. The Transfer Maintenance window opens.
+1. From the Options menu, select Submit. The status of the transfer changes to
+Submitted.
+2. Click OK to save your changes and close the window.
+
+4.4. Edit a Transfer
+Navigate: From the main menu, select Inventory > Transfer. The Transfer Search
+window opens. Search for and retrieve a transfer in Edit mode. Restrict the search to
+transfers in Input or Approved status. The Transfer Maintenance window opens.
+Edit the enabled fields as necessary.
+
+4.5. Edit the Items on the Transfer
+1. Click Items. The details appear in the Transfer Detail window.
+2. Select the item to be edited. The details appear in the Apply area.
+3. Edit the enabled fields as necessary.
+4. Click Apply. The updated details are added to the table.
+5. Click OK to save your changes and close the windows.
+
+4.6. Edit Customer Details for a Customer Order Transfer
+1. Click Customer. The PO Customer Maintenance window opens.
+2. Edit the enabled fields as necessary.
+3. Click OK to save your changes and close the windows.
+
+4.7. View a Transfer
+Navigate: From the main menu, select Inventory > Transfer. The Transfer Search
+window opens.
+Search for and retrieve a transfer in View mode. The Transfer Maintenance window
+opens.
+Click Items. The details are displayed in the Transfer Detail window.
+
+4.8. Create a Mass Return Transfer with a Return to Vendor
+Navigate: From the main menu, select Inventory > Mass Return Transfers. The Mass
+Return Transfer Search window opens.
+In the Action field, select New.
+2. Click OK. The Mass Return Transfers window opens.
+3. In the MRT Details area:
+a. In the MRT No. field, enter the MRT description.
+b. In the Wh field, enter the ID of the warehouse that the items are being
+returned to, or click the LOV and select a warehouse.
+c. In the Type field, select the type of MRT you are creating:
+Inter-company: The transfer can occur between locations in different transfer
+entities.
+Intra-company: The transfer can occur between locations in the same transfer
+entity.
+d. In the Inventory Type field, enter the ID of the type of merchandise you want
+to transfer, or click the LOV button and select a merchandise type.
+e. In the Quantity Type field, select the how you will determine the number of
+items to transfer.
+Manual: After selecting the item, you must enter the number of items to
+transfer. The quantity will default to the stock on hand (SOH), but if the SOH
+falls below the defined transfer quantity, the transfer will be created in input
+status.
+f. In the Tsf Not After Date field, enter the last date the transfer can occur, or
+click the calendar button and select a date.
+4. In the RTV Details area:
+a. In the Supplier field, enter the ID of the supplier you are returning the
+merchandise to, or click the LOV button and select the supplier.
+b. In the Create Status field, select the status the RTV will be created in.
+c. In the Ret. Aut. No. enter the return authorization number for the supplier.
+d. In the Create Date field, enter the date the RTV is created.
+e. In the Reason field, select the reason you are creating the RTV.
+f. In the Not After Date field, enter the last date the RTV can occur, or click the
+calendar button and select a date.
+g. In the Restock % field, enter the percentage that is applied for restocking fees.
+h. Select the Include Wh Inv check box, to indicate warehouse inventory is
+included in the creation of the RTVs.
+5. Add items to a mass return transfer.
+6. Add locations to a mass return transfer.
+7. If you do not enter a date, you must create the RTV manually.
+a. On the Mass Returns Transfer window, click RTV. The RTV window opens.
+b. Create an RTV order.
+c. Approve the RTV order.
+d. Click OK to save any changes and close the window.
+8. Click OK to save any changes and close the window. If you created the MRT to
+automatically create the RTV, the RTV will be created on the date entered in the
+create date field.
+
+4.9. Edit a Mass Return Transfer
+Navigate: From the main menu, select Inventory > Mass Return Transfers. The Mass
+Return Transfer Search window opens. Search for and retrieve a transfer in Edit mode.
+Restrict the search to transfers in Input status. The Mass Return Transfers window
+opens.
+In the MRT Details area, update the enabled fields as necessary.
+
+4.10. Submit a Mass Return Transfer
+Navigate: From the main menu, select Inventory > Mass Return Transfers. The Mass
+Return Transfer Search window opens. Search for and retrieve a transfer in Edit mode.
+Restrict the search to transfers in Input status. The Mass Return Transfers window
+opens.
+1. From the Options menu, select Submit. The status of the transfer changes to
+Submitted.
+2. Click OK to save any changes and close the window.
+
+4.11. Approve a Mass Return Transfer
+Navigate: From the main menu, select Inventory > Mass Return Transfers. The Mass
+Return Transfer Search window opens. Search for and retrieve a transfer in Edit mode.
+Restrict the search to transfers in Submitted status. The Mass Return Transfers window
+opens.
+1. From the Options menu, select Approve. The status of the transfer changes to
+Approved.
+2. Click OK to save any changes and close the window
+
+4.12. Reject a Mass Return Transfer
+Navigate: From the main menu, select Inventory > Mass Return Transfers. The Mass
+Return Transfer Search window opens. Search for and retrieve a transfer in Edit mode.
+Restrict the search to transfers in Worksheet status. The Mass Return Transfers
+window opens.
+1. From the Options menu, select Reject. The status of the transfer changes to
+Rejected.
+2. Click OK to save any changes and close the window.
+
+4.13. Close a Mass Return Transfer
+Navigate: From the main menu, select Inventory > Mass Return Transfers. The Mass
+Return Transfer Search window opens. Search for and retrieve a transfer in Edit mode.
+The Mass Return Transfers window opens.
+1. From the Options menu, select Close. The status of the transfer changes to Closed.
+2. Click OK to save any changes and close the window.
+
+4.14. Edit Transfer Zones
+
+Navigate: From the main menu, select Control > Setup > Transfer Zone > Edit. The
+Transfer Zone Maintenance window opens.
+Edit the descriptions as necessary.
+
+4.15. Search for a Transfer
+Navigate: From the main menu, select Inventory > Transfer. The Transfer Search
+window opens.
+1. In the Action field, select either Edit or View.
+2. Enter additional criteria as desired to make the search more restrictive.
+3. Click Search. The Transfer Search window displays the transfers that match the
+search criteria.
+4. Select a task:
+a. To perform another search, click Refresh.
+b. To display the details of a transfer, select a record and click OK. The details
+appear in the Transfer Maintenance window.
+5. Click Close to exit.
+
+4.16. Edit a Transfer
+Navigate: From the main menu, select Inventory > Transfer. The Transfer Search
+window opens. Search for and retrieve a transfer in Edit mode. Restrict the search to
+transfers in Input or Approved status. The Transfer Maintenance window opens.
+Edit the enabled fields as necessary.
+
+Edit the Items on the Transfer
+
+1. Click Items. The details appear in the Transfer Detail window.
+2. Select the item to be edited. The details appear in the Apply area.
+3. Edit the enabled fields as necessary.
+4. Click Apply. The updated details are added to the table.
+5. Click OK to save your changes and close the windows.
+
+Edit Customer Details for a Customer Order Transfer
+1. Click Customer. The PO Customer Maintenance window opens
+    2. Edit the enabled fields as necessary.
+        3. Click OK to save your changes and close the windows
+
+4.17. Delete a Transfer
+Navigate: From the main menu, select Inventory > Transfer. The Transfer Search
+window opens. Search for and retrieve a transfer in Edit mode. Restrict the search to
+transfers in Input or Approved status. The Transfer Maintenance window opens.
+1. From the Options menu, select Delete. When prompted to delete the record, click
+Yes. You are returned to the Transfer Search window.
+2. Click Close to exit..
+
+4.18.  Transfer History 
+User should be able to view the list of transfers . The Incomplete transfers older than 30 days and complete transfers older than 2 years should not be  displayed in the list.
+
+1
+
+

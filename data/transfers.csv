@@ -1,0 +1,584 @@
+Test Case Title,Step,Description,Notes,Expected Result,Expected File,P/F,Tester name,Testing date ,Defect id,Remarks
+Inventory Transfer - Screen Validation ,Step,"From the main menu, select Inventory _ Transfer
+
+ Select Inventory _ Transfer _ Transfer Search Window
+
+1 - PopUp 'Action' field options :
+                       - View
+                       - New
+                       - New from existing
+                       - Edit
+2 - PopUp 'Type' field options :Test for all of the following options
+                       - Store-requisition
+                       - Customer order
+                       - Return to vendor
+                       - Confirmation
+                       - Non-salable merchandise
+                       - Administrative
+                       - Manual Requisition
+                       - Book Tranfer
+                       - Non-salable Book Tranfer
+                       - PO Linked Transfer
+                       - Externaly Generated
+3 - Fields available to start an transfer",,"
+
+1 - Transfer Search Window opens
+
+2 - For each option selected by 'View' , 'New', 'New from existing' or 'Edit' 
+        the fields are available to make the action.
+",,,,,,
+Create a transfer ,Step,"Open the Transfer form Inventory -> Transfer
+
+   To create a transfer for an Emergency Store Order
+
+ - Pre-requisite Step :
+           Stock on hand available at transfering location
+
+1 - Create a Manual Requisition Transfer
+2 - Action field > select New 
+3 - Type field > select Manual Requisition
+4 - Click OK
+
+5 - Freight type field > select required type 
+CHECK THAT FOR CENTALLY BOOKED TRANSFER THE FREIGHT TYPE FIELD IS ALWAYS NORMAL
+6 - Carrier field > select required carrier
+7 - Comments field > enter required comments 
+8 - Ext.Reference field > enter required reference code
+
+9  -  In ‘From’ and ‘To’ area.
+10 - Location Type field > select origin and destination 
+11 - Location field > select location identity
+12 - Click Items
+
+13 - Item Type field > select required option
+14 - Enter ID number of required Item or Item list
+15 - Trans Qty field > enter required units to transfer
+16 - Click Apply
+17 - Click OK",,"
+
+The Transfer Search Window opens
+
+
+1 to 4- Transfer Maintenance Window opens
+         -New Transfer number is assigned 
+
+9 to 12 - Transfer Detail Window opens
+
+13 to 17 - Return to Transfer search Window
+
+
+
+",,,,,,
+Approve a Transfer ,Step,"Open the Transfer form Inventory -> Transfer
+
+  To approve a transfer for an Emergency Store Order
+
+ - Pre-requisite Step :
+           Transfer has been submitted
+
+1 - Open the Transfer form.
+2 - Inventory -> Transfer
+
+3 - Action field > select Edit 
+4 - Type field > select Manual Requisition
+5 - Status field > select Submitted
+6 - Click Search
+
+7 - Select required transfer
+8 - Click OK
+
+9 - Click Items
+10 - Check details of transfer and Click OK
+
+11 - Click Options at top of screen
+12 - Select Approve 
+
+Click OK and then Close to exit
+13 - Run the Night Batch",,"
+
+1 to 2 - The Transfer Search Window opens
+
+3 to 6 - Transfer Search Window opens
+
+7 to 8 - Transfer Maintenenace Window opens
+
+9 to 10 - Transfer Detail Window opens
+             Return to Transfer Maintenence window
+
+11 to 12 - Status field value should have changed to Approved
+",,,,,,
+Create a Manual Requisition Transfer,Step,"Open the Transfer form Inventory -> Transfer
+
+   To create a transfer from warehouse to store or from a store to a another store
+
+ - Pre-requisite Step :
+           None
+
+1 - Open the Transfer form.
+2 - Inventory -> Transfer
+
+3 - In the Action field, select New. 
+
+4 - In the Type field select the “Manual Requisition” type and click OK. 
+
+5 - Enter the details as necessary in the Freight Type, Routing Type/Carrier, 
+         Department, Comments, and Ext Reference Code fields. 
+
+6 - In the Location Type and Location fields, specify the type 
+         and identity of the origin and destination locations.
+
+7 - Click Items.  
+
+8 - In the Apply area, select a grouping mechanism in the Item Type field.
+       In the Item field, enter the ID of the item or item list, or click the LOV 
+       button and select the item or item list.
+
+9 - In the Trans Qty field enter the number of eaches to transfer.
+         Enter any additional details in the enabled fields.
+         Click Apply. 
+
+10 - Click OK to exit the Transfer Detail window. 
+",,"
+
+1,2 - The Transfer Search window is displayed. 
+
+3 - The type field should be enable 
+
+4 - The Transfer Maintenance window is displayed 
+
+5, 6 - Save this information, to check if the transfer is being correctly done between the locations
+
+7 - The Transfer Detail window is displayed. 
+
+8 - The fields: Qty type, unit of transfer and trans qty should be enable 
+
+9 - The details are added to the table. 
+
+10 - The transfer maintenance window opens.
+
+",,,,,,
+ Submit a Manual Requisition Transfer for Approval,Step,"Open the Transfer form Inventory -> Transfer
+
+   To Submit a Manual Requisition Transfer for Approval
+
+ - Pre-requisite Step :
+           Transfer has been created and at Input stage
+
+1 - Open the Transfer form.
+2 - Inventory -> Transfer
+
+3 - Action field > select Edit 
+4 - Type field > select manual requisition
+5 - Status field > select Input
+6 - Click Search
+
+7 - Validate the transfer data
+
+8 - Click Items
+9 - Check details of transfer and Click OK
+ 
+10 - Click Options at top of screen
+11 - Select Submit 
+12 -Night Batch Run's
+",,"
+
+1,2 - The Transfer Search window is displayed. 
+
+3 - Transfer Search Window opens
+
+4,6 - Transfer Maintenance Window opens 
+
+7 - The data should be correct
+
+8,9 - Transfer Detail Window opens
+        Return to Transfer Maintenance window
+
+10,11  - Status field value should have changed to Submitted 
+
+",,,,,,
+Inventory Transfer Approve a Transfer ,Step,"Open the Transfer form Inventory -> Transfer
+
+   To approve a Transfer 
+
+ - Pre-requisite Step :
+           Transfer has been submitted
+
+1 - Open the Transfer form.
+2 - Inventory -> Transfer
+
+3 - Action field > select Edit 
+4 - Type field > select Customer Order
+5 - Status field > select Submitted
+6 - Click Search
+
+7 - Select required transfer
+8 - Click OK
+ 
+9 - Validate if the data is correct 
+
+10 - Click Items
+11 - Check details of transfer and Click OK
+
+12 - Click Options at top of screen
+13 - Select Approve 
+
+14 - Click OK and then Close to exit",,"1,2 - The Transfer Search window is displayed. 
+
+3,6 - Transfer Search Window opens
+
+7,8 - Transfer Maintenance Window opens
+
+9 - The data should be correct and according with what was previously inserted 
+
+10,11 - Transfer Detail Window opens
+           Return to Transfer Maintenance window
+
+12,13 - Status field value should have changed to Approved ",,,,,,
+Edit a Transfer ,Step,"Open the Transfer form Inventory -> Transfer
+
+   To edit a Transfer  
+
+ - Pre-requisite Step :
+           Transfer has been created
+
+1 - Open the Transfer form.
+2 - Inventory -> Transfer
+
+3 - In the Action field, select either Edit  
+       and Enter additional criteria as 
+       desired to make the search more restrictive
+
+4 - Click Search 
+
+5 - To display the details of a transfer, 
+        select a record and click OK.
+
+6 - Validate the data and change some values  
+7 - Click Close to exit",,"1,2 - The Transfer Search window is displayed. 
+
+4 - The Transfer Search window displays 
+        the transfers that match the search criteria.
+ 
+5 - To display the details of a transfer, select a record and click OK.
+
+6 - The Transfer should had been saved with the new values",,,,,,
+View a Transfer ,Step,"Open the Transfer form Inventory -> Transfer
+
+   To View a Transfer  
+
+ - Pre-requisite Step :
+           Transfer has been created
+
+1 - Open the Transfer form.
+2 - Inventory -> Transfer
+
+3 - In the Action field, select either Edit  
+       and Enter additional criteria as 
+       desired to make the search more restrictive
+
+4 - Click Search 
+
+5 - To display the details of a transfer, 
+        select a record and click OK.
+
+6 - Validate the data.
+7 - Click Close to exit
+",,"
+
+1,2 - The Transfer Search window is displayed. 
+
+4 - The Transfer Search window displays 
+        the transfers that match the search criteria.
+ 
+5 - To display the details of a transfer, select a record and click OK.
+
+6,7 - The transfer maintenance window close
+
+",,,,,,
+View a Transfer without any values in the fields,Step,"Open the Transfer form Inventory -> Transfer
+
+   To View a Transfer  
+
+ - Pre-requisite Step :
+           Transfer has been created
+
+1 - Open the Transfer form.
+2 - Inventory -> Transfer
+
+3 - In the Action field, select either Edit  
+      
+4 - Click Search 
+
+5 - To display the details of a transfer, 
+        select a record and click OK.
+
+6 - Validate the data.
+7 - Click Close to exit
+",,"
+
+1,2 - The Transfer Search window is displayed. 
+
+4 - The Transfer Search window displays 
+        the transfers that match the search criteria.
+ 
+5 - To display the details of a transfer, select a record and click OK.
+
+6,7 - The transfer maintenance window close
+
+",,,,,,
+View a Transfer with invalid value in transfer field,Step,"Open the Transfer form Inventory -> Transfer
+
+   To View a Transfer  
+
+ - Pre-requisite Step :
+           Transfer has been created
+
+1 - Open the Transfer form.
+2 - Inventory -> Transfer
+
+3 - In the Action field, select either Edit  
+4. Enter character value in the transfer field",,Error should pop up.,,,,,,
+Inventory  Transfer  View a Transfer with invalid value in Shipment field,Step,"Open the Transfer form Inventory -> Transfer
+
+   To View a Transfer  
+
+ - Pre-requisite Step :
+           Transfer has been created
+
+1 - Open the Transfer form.
+2 - Inventory -> Transfer
+
+3 - In the Action field, select either Edit  
+4. Enter character value in the shipment field",,Error should pop up.,,,,,,
+View a Transfer with invalid value in Item field,Step,"Open the Transfer form Inventory -> Transfer
+
+   To View a Transfer  
+
+ - Pre-requisite Step :
+           Transfer has been created
+
+1 - Open the Transfer form.
+2 - Inventory -> Transfer
+
+3 - In the Action field, select either Edit  
+4. Enter invalid value in the item  field",,Error should pop up.,,,,,,
+View a Transfer with invalid dates,Step,"Open the Transfer form Inventory -> Transfer
+
+   To View a Transfer  
+
+ - Pre-requisite Step :
+           Transfer has been created
+
+1 - Open the Transfer form.
+2 - Inventory -> Transfer
+
+3 - In the Action field, select either Edit  
+4. Enter invalid dates in the From and to dates field",,Error should pop up.,,,,,,
+Inventory Transfer  Create a transfer based in other one ,Most of these transfer creations are out of scope for TOM. Manual transfers will be created in GFO and interfaced to ORMS,"Open the Transfer form Inventory -> Transfer
+
+   To Create a transfer based on another one 
+
+ - Pre-requisite Step :
+           A Transfer created
+
+1 - Open the Transfer form.
+2 - Inventory -> Transfer
+
+3 - In the Type field select the option” New from Existing”
+
+4 - Insert the number of the transfer that you want to copy
+       or
+    Enter additional criteria as desired to make the search
+     more restrictive and press search. Select the 
+     transfer that you want to copy and press OK.
+
+5 - Validate that is data of this transfer is equal to the 
+     one that was copied. Only the transfer number should be different 
+
+6 - Verify that is not possible to change the values of the fields “From location” and “To Location”
+
+7 - Add more items to the transfer.
+     Follow the steps described in the transfer creation to add items
+
+8 - Change customer data if it is a customer order transfer
+
+9 - Press ok to save the data
+
+10 - To submit and approve the transfer follow the steps described above",,"
+
+1,2 - The Transfer Search window is displayed. 
+
+3 - All fields will be enabled
+
+4 - The transfer maintenance window opens 
+
+5 - The transfer should have exactly the same data of the other one
+
+6 - The fields should be disable
+
+7 - New Items should had been added
+
+8 - The customer details should had been changed
+
+9 - The transfer should had been created in worksheet status
+",,,,,,
+,VP,Try retrieving the newly created transfer,,The transfer could be seen,,,,,,
+Delete a transfer,Step,"Delete a transfer
+
+From the main menu, select Inventory > Transfer.
+
+Prerequisite Step:
+Search for and retrieve a transfer in Edit mode. Restrict the search to transfers in Input or Approved status
+
+1. From the Options menu, select Delete. 
+2. Click Close to exit.
+3. Night batch to be run",,"The Transfer Search window opens    
+
+When prompted to delete the record, click  Yes. User is returned to the Transfer Search window
+
+Transfer deleted",,,,,,
+Create a mass return transfer,Step,"From the main menu, select Inventory > Mass Return Transfers.
+
+1. In the Action field, select New.
+2. Click OK. 
+3. In the MRT Details area:
+     a. In the MRT No. field, enter the MRT description.
+     b. In the Wh field, enter the ID of the warehouse that the items are being returned to, or click the LOV and select a warehouse.
+     c. In the Type field, select the type of MRT you are creating.
+         Inter-company: The transfer can occur between locations in different transfer entities.
+         Intra-company: The transfer can occur between locations in the same transfer entity.
+    d. In the Inventory Type field, enter the ID of the type of merchandise you want to  transfer, or click the LOV button and select a merchandise type.
+    e. In the Quantity Type field, select how you will determine the number of items to transfer.
+       Manual: After selecting the item, you must enter the number of items to  transfer. The quantity will default to the stock on hand (SOH), but if the SOH falls below the defined transfer quantity, the transfer will be created in input status. 
+       All Inventory: Transfers are created for all stock on hand and the user can not specify how much to transfer,
+   f. In the Tsf Not After Date field, enter the last date the transfer can occur, or click
+      the calendar button and select a date.
+4. Add items to a mass return transfer.
+5. Add locations to a mass return transfer
+",,The Mass Return Transfers window opens.                                             Data entered as per the user,,,,,,
+Edit a mass return transfer,Step,"From the main menu, select Inventory > Mass Return Transfers.
+
+Prerequisite Step:
+Search for and retrieve a transfer in Edit mode. Restrict the search to transfers in Input status.In the MRT Details area, update the enabled fields as necessary.
+
+Maintain items on the mass return transfer
+1. Filter the mass return transfer as necessary.
+2. Edit the enabled fields.
+3. Click Apply.
+
+Add items to the mass return transfer
+1. Click Add. The Add Items area is enabled.
+2. In the Item Type field, select the type of item you want to add to the transfer.
+3. In the Item field, enter the item ID or click the LOV button and select an item.
+4. In the Restock % field, enter the percentage that is applied as a restocking fee to the item.
+5. Click Apply. The Items are added to the table.
+
+Delete an item from the mass return transfer
+1. Select an item in the Item Details area.
+2. Click Delete Item. You are prompted to confirm the deletion.
+3. Click Yes.",,"The Mass Return Transfer Search window opens.
+
+Items added
+
+
+Items deleted",,,,,,
+Submit a mass return transfer,Step,"From the main menu, select Inventory > Mass Return Transfers.
+
+Prerequisite Step:
+Search for and retrieve a transfer in Edit mode. Restrict the search to transfers in Input
+status
+
+1. From the Options menu, select Submit. 
+2. Click OK to save any changes and close the window.",,"The status of the transfer changes to  Submitted.
+
+Changes saved.",,,,,,
+Approve a mass return transfer,Step,"From the main menu, select Inventory > Mass Return Transfers.
+
+Prerequisite Step:
+Search for and retrieve a transfer in Edit mode. Restrict the search to transfers in Submitted status.
+
+1. From the Options menu, select Approve. 
+2. Click OK to save any changes and close the window.",,"The status of the transfer changes to Approved.
+
+Changes saved",,,,,,
+Reject a mass return transfer,Step,"From the main menu, select Inventory > Mass Return Transfers.
+
+Prerequisite Step:
+Search for and retrieve a transfer in Edit mode. Restrict the search to transfers in Worksheet status.
+
+1. From the Options menu, select Reject. 
+2. Click OK to save any changes and close the window.",,"
+The status of the transfer changes to Rejected.
+
+Changes saved.",,,,,,
+Close a mass return transfer,Step,"From the main menu, select Inventory > Mass Return Transfers.
+
+Prerequisite Step:
+Search for and retrieve a transfer in Edit mode.
+
+1. From the Options menu, select Close . 
+2. Click OK to save any changes and close the window.",,"The status of the transfer changes to Closed.
+
+Changes saved
+
+Covered in the System Option",,,,,,
+Maintain Transfer Zones,Step,"1.  Log on to ORMS using valid user ID and Password
+2. Main menu> Control > Setup > Transfer Zone > Edit
+3. Click Add..
+4, In the Transfer Zone field, Enter a unique ID for the transfer Zone
+5. In the Description field enter the description of the transfer Zone
+6. Click OK to save your changes and close the window
+",,"1. Successfully Logged on
+2. The transfer Zone maintenance window opens
+3. The next available line is enabled.
+4. Unique ID entered in the transfer Zone field
+5.Description is entered in the Description field
+6. Transfer Zone is successfully added",,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,VP,Validate if there is one transfer zone for all location.,,One transfer zone for all location.,,,,,,
+Transfer Search,Step ,"1. Log on to ORMS using valid user ID and Password
+2. Main menu > Inventory > Transfer
+3. 1 - PopUp 'Action' field options :
+                       - View
+                       - New
+                       - New from existing
+                       - Edit
+4.Click OK.
+5. Enter rest of the details and click Ok to save changes
+",,"1.Successfully Logged on
+2.The Transfer Search window opens.
+4.The Transfer Maintenance window opens.
+5.Changes made are saved.",,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,VP,"Validate if the following transfer types can be created
+Available Transfer Types
+- Customer Order
+- Return to Vendor
+- Confirmation
+- Non Saleable Merchandise
+- Administrative
+- Manual Requisition
+- Book Transfers
+- Non-Saleable Book Transfers
+- ReAllocation
+- Intercompany",,The mentioned transfer type can be created.,,,,,,
+Edit Transfer Details,Step,"1.Log on to ORMS using valid user ID and Password
+2.Main menu> Inventory > Mass Return Transfers.
+3.In the Action field, select New and Click New
+4.In the MRT Details, enter the valid entries.",,"1.Successfully Logged on
+2.The Mass Return Transfer Search window opens
+3.The Mass Return Transfers window opens.
+4.Details are entered in the MRT Details.
+",,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,VP,"In the Create Details field of eth RTV details, Validate that the Ad-hoc RTV option is not present",,The Ad-hoc RTV option is not a valid transfer type.,,,,,,
+,Step,Enter the other fields and click Ok to save the changes,,Details are saved.,,,,,,
+Transfer History,Step,Go to ORMS menu : inventory -> Transfer and open  the transfer search Window . Select the Edit/view mode and run a query for the transfer.,,The list of all the transfers gets generated .,,,,,,
+,VP,The list of transfer is generated.,, The Incomplete transfers older than 30 days and Complete transfers older than 2 years will not be displayed visible in the result.,,,,,,

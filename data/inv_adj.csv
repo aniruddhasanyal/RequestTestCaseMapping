@@ -1,0 +1,132 @@
+Test Case Title,Step,Description,Notes,Expected Result,Expected File,P/F,Tester name,Testing date ,Defect ID(s),Remarks
+" Inventory Status Types 
+
+",Step,"Control > Setup > Inventory Status Types > Edit
+    Obj.:  To Add an inventory status type
+1 - From the main menu, select Control > Setup > Inventory Status
+2 - Types > Edit. The current status types are displayed on the Inventory Status Types window
+3 - Click Add. The next available line is enabled
+4 - In the Status field, enter a unique ID for the status type
+5 - In the Description field, enter the description of the status type
+6 - Click OK to exit",,"1 - Inventory adjustments can be made online or they can be received from an external system, such as Retek Distribution Management. 
+2 - There are two types of  adjustments that can be made to inventory:
+              • Stock on hand: The quantity of stock on hand, or salable stock, is increased or decreased. Both the quantity and value of the stock on hand are adjusted in the stock ledger
+              • Unavailable inventory: The quantity of stock on hand does not change, but the quantity of unavailable stock, or non-salable stock, is increased or decreased. In the stock ledger, the adjustment is recorded as a transfer between stock on hand and unavailable inventory. No adjustment is made to the stock value.",,,,,,
+,VP,Verify whether the status type is added successfully,,,,,,,,
+"Editing Inventory Adjustment Reason 
+
+
+",Step,"Control > Setup > Inventory Adjustment Reason > Edit
+    Obj.:  To Add an inventory adjustment reason
+1 - From the main menu, select Control > Setup > Inventory
+2 - Adjustment Reason > Edit. The current reasons are displayed in the Inventory Adjustment Reason Code Maintenance window.
+3 - Click Add
+4 - In the Reason field, enter a unique ID for the reason
+5 - In the Description field, enter the description of the reason
+6 - Click OK to exit",,"2 , 3 -  The next available line is enabled
+4 - In the Reason field, that´s a unique ID
+5 - The description of the reason created successfully
+6 - Save the options",,,,,,
+" Inventory Adjustments 
+
+
+",Step,"Inventory > Inventory Adjustments > By Item
+    Obj.:  To Adjust inventory by item
+1 - From the main menu, select Inventory > Inventory Adjustments >     By Item
+     The Inventory Adjustment by Item window is displayed
+2 - Insert the item number of the item
+3 - Insert the Reason field
+4 - Insert the Location Type field
+5 - In the Location field enter the ID of the location
+6 - Insert the values In the Adjustment Qty field",,"2 - The Item field,  the item number of the item, is applied
+3 - A reason is required if you select Total Stock on Hand in the Inventory Status field
+4 - The Location Type field, The Pack items can be adjusted only at warehouses
+5 - The Location field enter the ID of the location  is applied
+6 - The Adjustment Qty field the entered negative numbers are subtracted from the total
+7 - New Adjustments is applied successfully",,,,,,
+,VP ,Validate  that SOH( Stock On Hand) and Unavailable inventory quantities are adjusted as per the inventory adjustments,, SOH and Unavailable inventory quantities should  adjusted as per the inventory adjustments,,,,,,
+,VP,Validate whether  in the Tran_Data table whether new entry is available for all the  the inventory adjustments with reason code captured correctly,,Tran_Data table should have a new entry for the inventory adjustments with reason code captured correctly,,,,,,
+,VP ,"Validate the inventory adjustment of Items for different UOM( EA, KG,CASE)",,Inventory adjustments should be done correctly for  different UOM,,,,,,
+,VP,"Validate the inventory adjustments for different Pack items (Simple packs, Complex pack, Catch-Weight Items)",,Inventory adjustments should be done correctly pack Items,,,,,,
+,VP ,"Repeat the inventory adjustment for the following reason codes
+103 - STKADJ_Stocktaking
+104 - STKADJ_Stolen
+105 - Store Cycle Count
+122 - Migration Adjustment
+201 - Wastage_OOC
+202 - Wastage_Damage
+207 - Wastage_Slow moving
+208 - Wastage_Production
+301 - Inter Transfer_Recipe
+304 - Inter Transfer_Recipe Ready Meal
+305 - Inter Transfer_Recipe Counters
+306 - Inter Transfer_Recipe Meat
+307 - Inter Transfer_Recipe Produce
+308 - Inter Transfer_Recipe Fish
+404 - STU_Office supplies
+406 - STU_Consumables
+407 - STU_Cleaning
+421 - STU_Ad. Sales promotion
+425 - STU_Social Contribution
+430 - STU_Govt Testing
+
+",,SOH and Unavailable inventory quantities are adjusted as per the inventory adjustments,,,,,,
+,VP ,Validate the inventory adjustment for all the inventory status types  provided by RMS,,Inventory adjustments  should be done for all the inventory status types,,,,,,
+"Inventory Adjustments By Store/Warehouse
+
+
+
+",,"Inventory > Inventory Adjustments >By Store/Warehouse
+    Obj.:  To Adjust inventory by location
+1 - From the main menu, select Inventory > Inventory Adjustments >By Store/Warehouse. The Inventory Adjustment by Location window is
+displayed
+2 - In the Location Type field, select the type of location where the adjustment must be made
+3 - In the Location field, enter the ID of the location, or click the LOV button and select the location
+4 - In the Inventory Status field, select the status that you want to apply to the items at the selected location
+5 - In the Reason field, enter the ID of the reason for the adjustment, or click the LOV button and select the reason
+6 - In the Item field, enter the item number of the item, or click the LOV button and select the item
+7 - In the Adjustment Qty field enter the number of units that you want to add or subtract. Use a negative number to subtract from the total
+8 - Click OK + Repeat to make adjustments at another location, or click OK to exit",,"1 -The Inventory Adjustment by Location window is displayed
+2 - In the Location Type field, is applied
+3 - In the Location field, enter the ID of the location, or click the LOV button and select the location
+4 - In the Inventory Status field, select the status that you want to apply to the items at the selected location
+5 - In the Reason field, enter the ID of the reason for the adjustment, or click the LOV button and select the reason
+Note: A reason is required if you select Total Stock on Hand in the Inventory Status field
+6 - In the Item field, enter the item number of the item, or click the LOV button and select the item
+7 - In the Adjustment Qty field enter the number of units that you want to add or subtract. Use a negative number to subtract from the total
+8 - Click OK + Repeat to make adjustments at another location, or click OK to exit",,,,,,
+,VP,Verify whether the adjustments are made properly for the location,,,,,,,,
+,VP,Validate all the VP ( Inventory adjustments by location) for iventory adjutments by location ,,All the VP should be verified ,,,,,,
+"View unavailable Items
+
+",Step,"Items > Items
+    Obj.:  To View unavailable inventory
+1 - From the main menu, select Items > Items. The Item Search window is displayed
+2 - Click for and retrieve an item in Edit or View mode. The Item Maintenance window is displayed
+3 - From the Options list. The Unavailable Inventory window is displayed
+4 - In the Location Type field, The type of location that you want to view
+5 - The status of the item as necessary
+6 - The locations that match the search criteria are displayed",,"
+When you edit or view an item, you can choose to view the quantity of
+unavailable, or non-salable, stock on hand. You can restrict the view to one or all
+inventory status types at one or all locations
+
+",,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,VP ,Validate the different status of the unavailable inventory  ,,The different status of the unavailabe inventory  should be validated after the inventory adjustments is done,,,,,,
+Inventory Status Types-Negative case,Step,"1 - From the main menu, select Control > Setup > Inventory Status
+2 - Types > Edit. The current status types are displayed on the Inventory Status Types window
+3 - Click Add. The next available line is enabled
+4 - In the Status field, enter already existing ID for the status type
+6 - Click OK ",,System should not allow to add the same ID ,,,,,,
+Editing Inventory Adjustment Reason -Negative case,Step,"Control > Setup > Inventory Adjustment Reason > Edit
+Obj.:  To Add an inventory adjustment reason
+1 - From the main menu, select Control > Setup > Inventory
+2 - Adjustment Reason > Edit. The current reasons are displayed in the Inventory Adjustment Reason Code Maintenance window.
+3 - Click Add
+4 - In the Reason field, enter existing ID for the reason
+5 - In the Description field, enter the description of the reason
+6 - Click OK",,System should not allow to add the same ID ,,,,,,
